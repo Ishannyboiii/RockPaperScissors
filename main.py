@@ -1,17 +1,17 @@
 import random
 
-round_count = input("How many rounds would you like to play? ")
+round_count = int(input("How many rounds would you like to play? "))
 score = 0
 
-for i in range(int(round_count)):
+for i in range(round_count):
     computer_choice = random.choice(["rock", "paper", "scissors"])
     player_choice = input("Rock, Paper, Scissors? ").lower()
 
     if computer_choice == player_choice:
         print("Tie")
-        add_round_for_tie = input("Would you like to add a round because of the tie?")
-        if add_round_for_tie.lower() == "yes":
-            round_count += 1
+        # add_round_for_tie = input("Would you like to add a round because of the tie? ")
+        # if add_round_for_tie.lower() == "yes":
+        #     round_count += 1
     else:
         if computer_choice == "paper" and player_choice == "scissors":
             print("Scissors beats paper. You win!")
@@ -28,5 +28,7 @@ for i in range(int(round_count)):
         if computer_choice == "rock" and player_choice == "paper":
             print("Paper beats rock. You win!")
             score += 1
+    if player_choice != "rock" or "paper" or "scissors":
+        print("Invalid Input")
 
 print(f"Your score is {score}/{round_count}")
