@@ -9,6 +9,9 @@ for i in range(int(round_count)):
 
     if computer_choice == player_choice:
         print("Tie")
+        add_round_for_tie = input("Would you like to add a round because of the tie?")
+        if add_round_for_tie.lower() == "yes":
+            round_count += 1
     else:
         if computer_choice == "paper" and player_choice == "scissors":
             print("Scissors beats paper. You win!")
@@ -25,6 +28,5 @@ for i in range(int(round_count)):
         if computer_choice == "rock" and player_choice == "paper":
             print("Paper beats rock. You win!")
             score += 1
-
 
 print(f"Your score is {score}/{round_count}")
